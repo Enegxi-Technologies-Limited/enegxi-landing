@@ -3,7 +3,7 @@ import Image from "next/image";
 // TODO: save each logo in public/clients/ and set its path (e.g. "/clients/Hervest.png").
 // Until a logo is set, the client's name is shown as text.
 const clients = [
-  { name: "Hervest", logo: "/clients/hervest.png" },
+  { name: "Hervest", logo: "/clients/Hervest.png" },
   { name: "TBC Technologies", logo: "/clients/Tbc.png" },
   { name: "Paystack", logo: "/clients/Paystack1.png" },
   { name: "Eko Electricity Distribution Company", logo: "/clients/Eko1.png" },

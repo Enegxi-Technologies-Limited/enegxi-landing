@@ -1,3 +1,4 @@
+import Image from "next/image";
 import { SITE } from "../lib/site";
 
 const INSTITUTE_URL = SITE.instituteUrl;
@@ -34,6 +35,7 @@ const products = [
     features: ["Frontend & backend", "Full-stack", "Product management"],
     href: INSTITUTE_URL,
     label: "Enegxi Institute",
+    logo: { src: "/products/logo transparent.png", width: 383, height: 236, className: "h-12" },
     theme: "light",
   },
   {
@@ -47,6 +49,7 @@ const products = [
     ],
     href: "https://payyng.com",
     label: "payyng.com",
+    logo: { src: "/products/payynglogo.webp", width: 208, height: 47, className: "h-7" },
     theme: "lime",
   },
   {
@@ -60,6 +63,7 @@ const products = [
     ],
     href: "https://irevault.com",
     label: "irevault.com",
+    logo: { src: "/products/irevaultlogo.png", width: 192, height: 79, className: "h-9" },
     theme: "dark",
   },
 ];
@@ -90,11 +94,22 @@ export default function Products() {
               key={product.name}
               className={`flex flex-col rounded-panel p-6 sm:p-8 md:last:col-span-2 lg:last:col-span-1 ${t.card}`}
             >
-              <span
-                className={`self-start rounded-btn px-3 py-1 text-xs font-semibold ${t.tag}`}
-              >
-                {product.tag}
-              </span>
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="flex h-16 items-center rounded-card bg-white px-4">
+                  <Image
+                    src={product.logo.src}
+                    alt={`${product.name} logo`}
+                    width={product.logo.width}
+                    height={product.logo.height}
+                    className={`${product.logo.className} w-auto max-w-[180px] object-contain`}
+                  />
+                </div>
+                <span
+                  className={`rounded-btn px-3 py-1 text-xs font-semibold ${t.tag}`}
+                >
+                  {product.tag}
+                </span>
+              </div>
 
               <h3 className="mt-6 text-2xl font-extrabold sm:text-3xl tracking-tight">
                 {product.name}
