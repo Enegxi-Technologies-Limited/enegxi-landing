@@ -158,8 +158,11 @@ export default function ProjectForm() {
         )}
         {status === "error" && (
           <span className="font-semibold text-brand-red">
-            Something went wrong. Please try again, or email
-            {SITE.email}.
+            Something went wrong. Please try again, or email{" "}
+            <a href={`mailto:${SITE.email}`} className="underline">
+              {SITE.email}
+            </a>
+            .
           </span>
         )}
       </p>
